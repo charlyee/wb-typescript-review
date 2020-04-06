@@ -29,18 +29,29 @@ var Calculator = /** @class */ (function () {
     Calculator.prototype.calculate = function () {
         var num1 = Number(this.num1.value);
         var num2 = Number(this.num2.value);
+        var answer = 0;
         switch (this.getOperator()) {
             case 'addition':
-                return this.add(num1, num2);
+                answer = this.add(num1, num2);
+                break;
             case 'subtraction':
-                return this.subtract(num1, num2);
+                answer = this.subtract(num1, num2);
+                break;
             case 'multiplication':
-                return this.multiply(num1, num2);
+                answer = this.multiply(num1, num2);
+                break;
             case 'division':
-                return this.divide(num1, num2);
+                answer = this.divide(num1, num2);
+                break;
             case 'remainder':
-                return this.remainder(num1, num2);
+                answer = this.remainder(num1, num2);
+                break;
         }
+        this.result.textContent = answer.toString();
+        return answer;
     };
     return Calculator;
 }());
+var newCalculator = new Calculator();
+newCalculator.form.addEventListener('submit', function (event) {
+});

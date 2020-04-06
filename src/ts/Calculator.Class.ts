@@ -27,17 +27,25 @@ class Calculator {
   public calculate (): number {
     const num1: number = Number( this.num1.value );
     const num2: number = Number( this.num2.value );
+    let answer: number = 0;
     switch ( this.getOperator() ) {
       case 'addition':
-        return this.add( num1, num2 );
+        answer = this.add( num1, num2 );
+        break;
       case 'subtraction':
-        return this.subtract( num1, num2 );
+        answer = this.subtract( num1, num2 );
+        break;
       case 'multiplication':
-        return this.multiply( num1, num2 );
+        answer = this.multiply( num1, num2 );
+        break;
       case 'division':
-        return this.divide( num1, num2 );
+        answer = this.divide( num1, num2 );
+        break;
       case 'remainder':
-        return this.remainder( num1, num2 );
+        answer = this.remainder( num1, num2 );
+        break;
     }
+    this.result.textContent = answer.toString();
+    return answer;
   }
 }
