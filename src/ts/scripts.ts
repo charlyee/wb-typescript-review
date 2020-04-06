@@ -57,3 +57,50 @@ const addOrSubtract = ( op: 'add' | 'subtract', num1: number, num2: number ): nu
 
 // addOrSubtract( 'multiply', 3, 6 ); // Would error now!
 console.log( addOrSubtract( 'add', 3, 10 ) ); // 13
+
+/**
+ * Record example.
+ * We are able to enforce the types within our data-structure!
+ * <keyType, valueType>
+ */
+
+const myRecord: Record<string, string> = {
+  'first_key': 'Hello, World!',
+  'name': 'Bill',
+  'nickname': 'Bob'
+};
+
+console.log( myRecord['first_key'] );
+
+/**
+ * Loop example.
+ */
+
+const myArray: Array<string> = [ 'A', 'B', 'C' ];
+for ( let value of myArray ) {
+  console.log( value );
+}
+
+/**
+ * Functions calling functions.
+ */
+
+let originalString = 'mystring';
+const addStringToBeginning = (string: string): string => {
+  return string + originalString;
+}
+
+const addStringToEnd = (string: string): string => {
+  return originalString + string;
+}
+
+const addStringsToBothEnds = (): Function => {
+  return ( beginningString: string, endingString: string ): string => {
+    originalString = addStringToBeginning( beginningString );
+    originalString = addStringToEnd( endingString );
+    return originalString;
+  };
+}
+
+// Calling functions from functions, we need to use new parenthesis!
+addStringsToBothEnds()( 'HELLOBEGIN:', 'GOODBYEEND!' );
