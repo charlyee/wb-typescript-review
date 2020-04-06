@@ -6,25 +6,25 @@ class Calculator {
   operator: HTMLSelectElement = document.querySelector( '[name="operator"]' );
   result: HTMLElement = document.querySelector( '#calculator strong' );
   // Methods:
-  add ( num1: number, num2: number ): number {
+  private add ( num1: number, num2: number ): number {
     return num1 + num2;
   }
-  subtract ( num1: number, num2: number ): number {
+  private subtract ( num1: number, num2: number ): number {
     return num1 - num2;
   }
-  multiply ( num1: number, num2: number ): number {
+  private multiply ( num1: number, num2: number ): number {
     return num1 * num2;
   }
-  divide ( num1: number, num2: number ): number {
+  private divide ( num1: number, num2: number ): number {
     return num1 / num2;
   }
-  remainder ( num1: number, num2: number ): number {
+  private remainder ( num1: number, num2: number ): number {
     return num1 % num2;
   }
-  getOperator (): string {
+  private getOperator (): string {
     return this.operator.value;
   }
-  calculate (): number {
+  public calculate (): number {
     const num1: number = Number( this.num1.value );
     const num2: number = Number( this.num2.value );
     switch ( this.getOperator() ) {
