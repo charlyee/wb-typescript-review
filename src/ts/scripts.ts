@@ -2,6 +2,8 @@
  * Using a class (and DOM) in TypeScript.
  */
 
+import { Calculator } from './Calculator.Class.js';
+
 // Create calculator from our class.
 const newCalculator: Calculator = new Calculator();
 // Event listener.

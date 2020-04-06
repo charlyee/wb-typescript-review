@@ -1,4 +1,4 @@
-class Calculator {
+export class Calculator {
   // Properties:
   form: HTMLElement = document.querySelector( '#calculator' );
   num1: HTMLInputElement = document.querySelector( '[name="num1"]' );

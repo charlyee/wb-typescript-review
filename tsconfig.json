@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "outFile": "js/scripts.js"
+    "outDir": "js",
+    "module": "es2015"
   },
-  "include": [ "src/ts/**/*" ],
+  "include": [ "src/ts/scripts.ts" ],
   "lib": [ "dom", "es5", "es2015" ]
 }
