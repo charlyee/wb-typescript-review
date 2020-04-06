@@ -52,6 +52,9 @@ var Calculator = /** @class */ (function () {
     };
     return Calculator;
 }());
+/**
+ * Using a class (and DOM) in TypeScript.
+ */
 // Create calculator from our class.
 var newCalculator = new Calculator();
 // Event listener.
@@ -59,3 +62,16 @@ newCalculator.form.addEventListener('submit', function (event) {
     event.preventDefault();
     newCalculator.calculate();
 });
+/**
+ * Enum Type.
+ * @link https://www.typescriptlang.org/docs/handbook/enums.html
+ * enums are a set of named constants!
+ */
+var Pizza;
+(function (Pizza) {
+    Pizza[Pizza["PEPPORONI"] = 1] = "PEPPORONI";
+    Pizza[Pizza["HAWAIIAN"] = 2] = "HAWAIIAN";
+    Pizza[Pizza["CANADIAN"] = 3] = "CANADIAN";
+    Pizza[Pizza["HAM"] = 4] = "HAM";
+})(Pizza || (Pizza = {}));
+console.log("\nWe have all kinds of pizzas!\nPizza 1 is: " + Pizza[1] + "\nPizza 2 is: " + Pizza[2] + "\nPizza 3 is: " + Pizza[3] + "\nPizza 4 is: " + Pizza[4] + "\n");
