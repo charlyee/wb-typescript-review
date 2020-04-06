@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outFile": "js/scripts.js"
+  },
+  "include": [ "src/ts/**/*" ],
+  "lib": [ "dom", "es5", "es2015" ]
+}
