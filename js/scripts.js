@@ -75,3 +75,28 @@ var Pizza;
     Pizza[Pizza["HAM"] = 4] = "HAM";
 })(Pizza || (Pizza = {}));
 console.log("\nWe have all kinds of pizzas!\nPizza 1 is: " + Pizza[1] + "\nPizza 2 is: " + Pizza[2] + "\nPizza 3 is: " + Pizza[3] + "\nPizza 4 is: " + Pizza[4] + "\n");
+/**
+ * Function.
+ * @link https://www.typescriptlang.org/docs/handbook/functions.html
+ */
+var todoForm = document.querySelector('#todo');
+var todoInput = document.querySelector('[name="todo"]');
+var todoList = document.querySelector('#todo ul');
+var addNewTodo = function (event) {
+    event.preventDefault();
+    var newLi = document.createElement('LI');
+    newLi.textContent = todoInput.value;
+    todoList.appendChild(newLi);
+};
+todoForm.addEventListener('submit', addNewTodo);
+/**
+ * Literal type example.
+ */
+var addOrSubtract = function (op, num1, num2) {
+    if (op == 'add')
+        return Number(num1 + num2);
+    else
+        return Number(num1 - num2);
+};
+// addOrSubtract( 'multiply', 3, 6 ); // Would error now!
+console.log(addOrSubtract('add', 3, 10)); // 13
