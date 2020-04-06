@@ -52,6 +52,10 @@ var Calculator = /** @class */ (function () {
     };
     return Calculator;
 }());
+// Create calculator from our class.
 var newCalculator = new Calculator();
+// Event listener.
 newCalculator.form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    newCalculator.calculate();
 });
